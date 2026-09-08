@@ -27,7 +27,7 @@
          '[commoncrawl.seeds :as seeds]
          '[commoncrawl.store :as store]
          '[cacao.core :as cacao]
-         '[clojure.string :as str])
+         '[kotoba.lang.text :as str])
 
 (def checks (atom {}))
 (defn- check! [k v] (swap! checks assoc k (boolean v)))

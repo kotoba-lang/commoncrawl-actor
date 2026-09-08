@@ -22,7 +22,7 @@
   `langgraph.graph`'s Pregel-style node execution requires (nodes are
   `state -> partial-state-map`, no Promise/async support), rather than
   fighting async fetch Promises inside a StateGraph node."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def ^:private cp (js/require "child_process"))
 (def ^:private zlib (js/require "zlib"))
@@ -73,7 +73,7 @@
   split line-by-line by the CALLER, not parsed whole here."
   [{:keys [method url headers body timeout-ms]}]
   (let [hdr-args (mapcat (fn [[k v]] ["-H" (str k ": " v)]) headers)
-        method-str (str/upper-case (name (or method :get)))
+        method-str (str/upper (name (or method :get)))
         body-json (when body (js/JSON.stringify (clj->js body)))
         args (cond-> (into ["-sS" "-X" method-str url] hdr-args)
                body-json (into ["--data-binary" "@-"])

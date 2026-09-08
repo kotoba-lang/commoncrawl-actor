@@ -28,7 +28,7 @@
          '[commoncrawl.report :as report]
          '[commoncrawl.seeds :as seeds]
          '[commoncrawl.store :as store]
-         '[clojure.string :as str])
+         '[kotoba.lang.text :as str])
 
 (defn- parse-args [args]
   (loop [args (seq args) flags {}]
