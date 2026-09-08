@@ -48,7 +48,7 @@
   (:require ["child_process" :as cp]
             ["fs" :as fs]
             ["path" :as path]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (defn- log [& xs]
   (println (str (.toISOString (js/Date.)) " " (str/join " " xs))))

@@ -24,7 +24,7 @@
   call site; here it is simply always true, since this actor has exactly
   one destination table."
   (:require [commoncrawl.iceberg :as iceberg]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (def ^:private cp (js/require "child_process"))
 (def ^:private fs (js/require "fs"))
