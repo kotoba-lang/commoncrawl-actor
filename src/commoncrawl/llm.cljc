@@ -26,7 +26,7 @@
   branch."
   (:require #?(:clj  [clojure.edn :as edn]
                :cljs [cljs.reader :as edn])
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (def system-prompt
   "Instructs the model to return ONE EDN map and nothing else — same

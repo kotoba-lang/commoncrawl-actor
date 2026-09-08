@@ -7,7 +7,7 @@
   based JSON-LD price extraction (no HTML-parsing library dependency taken
   for a small, bounded extraction need). Pure string transforms, no IO —
   portable .cljc, runs identically under :clj and :cljs/nbb."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def ^:private max-text-chars
   "Matches net-kotobase web.ingest's own `text` field cap

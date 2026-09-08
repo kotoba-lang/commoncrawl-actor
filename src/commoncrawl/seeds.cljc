@@ -24,7 +24,7 @@
   crash the actor)."
   (:require #?(:clj  [clojure.edn :as edn]
                :cljs [cljs.reader :as edn])
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (def embedded-seeds
   "Vector of {:domain :url :label}. `:domain` is what the governor checks

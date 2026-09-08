@@ -3,7 +3,7 @@
   — the operator-facing view of `commoncrawl.store/ledger` /
   `commoncrawl.store/tick-log`, same role `talent.store/ledger-line` plays
   for that actor."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn ledger-line
   "One ledger fact -> a one-line human-readable string."
