@@ -4,7 +4,7 @@
   cloud_itonami.identity_core/kotobase-resources documents as closing two
   real live 401s (kotobase:pin specifically)."
   (:require [clojure.test :refer [deftest is testing]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [commoncrawl.identity :as identity]
             [cacao.core :as cacao]))
 

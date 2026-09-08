@@ -14,7 +14,7 @@
   a canned map; the real nbb implementation
   (`commoncrawl.live-http/embed-fn`) does the actual curl POST + JSON
   parse."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def default-model
   "murakumo's embeddings route is a single fixed self-hosted head (no

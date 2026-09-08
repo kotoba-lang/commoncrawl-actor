@@ -25,7 +25,7 @@
   `commoncrawl.live-http` (nbb-only, `.cljs`), never here — same
   'pure core vs. injected real IO' split as `commoncrawl.llm`/
   `commoncrawl.embeddings`/`commoncrawl.kotobase`."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def cdx-base "https://index.commoncrawl.org")
 (def data-base "https://data.commoncrawl.org")
