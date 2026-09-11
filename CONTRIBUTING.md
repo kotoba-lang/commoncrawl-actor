@@ -6,9 +6,9 @@ tests, seed-list tooling, and documentation.
 ## Development
 
 ```bash
-clojure -M:dev:test
-clojure -M:lint
-clojure -M:dev:run   # offline demo (commoncrawl.sim)
+kbb -M:dev:test
+kbb -M:lint
+kbb -M:dev:run   # offline demo (commoncrawl.sim)
 ```
 
 Keep changes small and include tests for the Governor (seed-scope/exclude/

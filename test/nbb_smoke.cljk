@@ -1,14 +1,14 @@
 ;; nbb (ClojureScript-on-Node) smoke test — proves the ENTIRE actor
 ;; (seeds/cdx/extract/llm/embeddings/identity/kotobase/policy/store/
 ;; operation/loop, i.e. every .cljc ns this repo ships) actually loads and
-;; runs on the nbb runtime, not just the JVM `clojure -M:test` suite —
+;; runs on the nbb runtime, not just the JVM `kbb -M:test` suite —
 ;; the repo-wide runtime priority (kotoba wasm > clojurewasm > cljs > nbb
 ;; > jvm/bb) makes nbb this actor's FIRST-CLASS target, so this is not an
 ;; optional extra check.
 ;;
 ;; Run (from this repo, sibling checkouts present at ../<name>, the west
 ;; layout):
-;;   nbb --classpath "src:test:../langgraph/src:../langchain/src:../langchain-store/src:../org-chainagnostic-cacao/src:../org-ietf-ed25519/src:../org-ietf-cbor/src" \
+;;   kbb --backend sci --classpath "src:test:../langgraph/src:../langchain/src:../langchain-store/src:../org-chainagnostic-cacao/src:../org-ietf-ed25519/src:../org-ietf-cbor/src" \
 ;;     test/nbb_smoke.cljk
 ;;
 ;; Exits nonzero on any failure. Runs entirely offline (mocked

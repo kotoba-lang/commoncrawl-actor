@@ -17,7 +17,7 @@ stayed under `kotoba-lang` (see `deps.edn`'s `:dev` alias comment).
 ```bash
 COMMONCRAWL_MURAKUMO_TOKEN=<murakumo /v1/messages+/v1/embeddings bearer token> \
 CF_CATALOG_TOKEN=<Cloudflare R2 Data Catalog token, see below> \
-  nbb --classpath "src:../../kotoba-lang/langgraph/src:../../kotoba-lang/langchain/src:../../kotoba-lang/langchain-store/src:../../kotoba-lang/org-chainagnostic-cacao/src:../../kotoba-lang/org-ietf-ed25519/src:../../kotoba-lang/org-ietf-cbor/src:../../kotoba-lang/authority/src" \
+  kbb --backend sci --classpath "src:../../kotoba-lang/langgraph/src:../../kotoba-lang/langchain/src:../../kotoba-lang/langchain-store/src:../../kotoba-lang/org-chainagnostic-cacao/src:../../kotoba-lang/org-ietf-ed25519/src:../../kotoba-lang/org-ietf-cbor/src:../../kotoba-lang/authority/src" \
   bin/tick.cljk --budget 1
 ```
 
@@ -205,7 +205,7 @@ both env vars itself.
 ## Reviewing what happened
 
 ```bash
-clojure -M:dev:run  # for a quick illustrative ledger (offline)
+kbb -M:dev:run  # for a quick illustrative ledger (offline)
 ```
 
 Or, against the real store file:

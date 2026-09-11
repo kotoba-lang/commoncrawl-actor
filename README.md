@@ -96,14 +96,14 @@ and `docs/operator-guide.md` for the `CF_CATALOG_TOKEN` it needs.
 
 ```bash
 # offline demo (no network, no deps beyond deps.edn's :dev alias)
-clojure -M:dev:run
+kbb -M:dev:run
 
 # tests (CDX/WARC, Governor, CACAO identity, kotobase client, LLM/embeddings,
 # Iceberg row-shaping, StateGraph, store, loop)
-clojure -M:dev:test
+kbb -M:dev:test
 
 # lint
-clojure -M:lint
+kbb -M:lint
 
 # a REAL tick (mints its own CACAO, fetches from Common Crawl, calls murakumo,
 # ingests into production kotobase.net, and mirrors into R2 Data Catalog if
@@ -111,7 +111,7 @@ clojure -M:lint
 # ../../kotoba-lang/<name>, not ../<name> — this repo moved orgs in 2026-08
 # while its siblings stayed under kotoba-lang (see deps.edn's :dev alias).
 COMMONCRAWL_MURAKUMO_TOKEN=<token> CF_CATALOG_TOKEN=<token> \
-  nbb --classpath "src:../../kotoba-lang/langgraph/src:../../kotoba-lang/langchain/src:../../kotoba-lang/langchain-store/src:../../kotoba-lang/org-chainagnostic-cacao/src:../../kotoba-lang/org-ietf-ed25519/src:../../kotoba-lang/org-ietf-cbor/src:../../kotoba-lang/authority/src" \
+  kbb --backend sci --classpath "src:../../kotoba-lang/langgraph/src:../../kotoba-lang/langchain/src:../../kotoba-lang/langchain-store/src:../../kotoba-lang/org-chainagnostic-cacao/src:../../kotoba-lang/org-ietf-ed25519/src:../../kotoba-lang/org-ietf-cbor/src:../../kotoba-lang/authority/src" \
   bin/tick.cljk --budget 1
 ```
 

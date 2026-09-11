@@ -3,7 +3,7 @@
   (LaunchAgent `net-kotobase.commoncrawl-actor-tick`, see
   `ops/net-kotobase.commoncrawl-actor-tick.plist`).
 
-    nbb bin/scheduled.cljk
+    kbb --backend sci bin/scheduled.cljk
 
   ## Why a wrapper rather than launchd calling `tick.cljs` directly
 
