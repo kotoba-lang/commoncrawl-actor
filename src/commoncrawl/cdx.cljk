@@ -19,7 +19,7 @@
   Every network call is a capability injected by the caller — `fetch-fn`
   (CDX index queries) and, for the WARC body, an already-decompressed-text
   string handed to `strip-warc-envelope`. This keeps the whole ns free of
-  IO, so it runs identically under :clj (tests, `clojure -M:test`) and
+  IO, so it runs identically under :clj (tests, `kbb -M:test`) and
   :cljs (nbb, the actor's real runtime — repo-wide runtime priority). The
   REAL network/gzip glue (curl range-fetch + zlib gunzip) lives in
   `commoncrawl.live-http` (nbb-only, `.cljs`), never here — same

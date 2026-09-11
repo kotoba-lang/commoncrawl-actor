@@ -39,7 +39,7 @@
          ;; langchain is langgraph's own transitive dep; pin the same local
          ;; checkout so the whole graph resolves from one workspace.
          io.github.kotoba-lang/langchain                {:local/root "../../kotoba-lang/langchain"}}}
-  ;; clojure -M:dev:run  → drive one offline dry-run tick through the actor
+  ;; kbb -M:dev:run  → drive one offline dry-run tick through the actor
   :run {:main-opts ["-m" "commoncrawl.sim"]}
   :test {:extra-paths ["test"]
          :extra-deps {io.github.cognitect-labs/test-runner

@@ -9,7 +9,7 @@
     seed3  a configured seed, but the CDX/WARC fetch misses      → hold (fetch-miss)
     seed4  a configured seed, extraction confidence below floor  → hold (low-confidence, soft)
 
-  Run: clojure -M:dev:run"
+  Run: kbb -M:dev:run"
   (:require [commoncrawl.operation :as op]
             [commoncrawl.report :as report]
             [commoncrawl.store :as store]))
