@@ -74,7 +74,7 @@
                     budget accounting; default: a fresh id from `now-ms`
     :now-ms         injectable clock (default: commoncrawl.identity/now-ms
                     — passed in here so tests are deterministic without an
-                    extra require cycle; see test/commoncrawl/loop_test.cljc)
+                    extra require cycle; see test/commoncrawl/loop_test.cljk)
     :collection-id  the CC collection id this tick's `actor` was built
                     against, threaded into each Iceberg row's
                     `collection_id` column (default nil — omitted from the

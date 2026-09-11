@@ -1,4 +1,4 @@
-;; bin/tick.cljs — the LIVE production entry point. Run by a scheduled
+;; bin/tick.cljk — the LIVE production entry point. Run by a scheduled
 ;; routine (cron / claude-code `schedule` skill), NOT an always-on
 ;; process — see commoncrawl.loop's ns docstring. Every real IO capability
 ;; (CDX/WARC fetch, LLM extraction, embeddings, net-kotobase ingest) comes
@@ -7,7 +7,7 @@
 ;; exercises against fakes — this file is pure wiring, no new logic.
 ;;
 ;; Usage:
-;;   nbb --classpath "src:<sibling checkouts>..." bin/tick.cljs [--budget N] [--store PATH]
+;;   nbb --classpath "src:<sibling checkouts>..." bin/tick.cljk [--budget N] [--store PATH]
 ;;
 ;; Env:
 ;;   COMMONCRAWL_MURAKUMO_TOKEN or KAGI_BIN  — murakumo /v1/messages + /v1/embeddings auth

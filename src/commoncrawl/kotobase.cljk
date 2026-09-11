@@ -24,7 +24,7 @@
   capability: `(fn [{:keys [url method headers body]}] -> {:status :body})`
   where `:body` is the ALREADY-JSON-parsed response map (or nil on a
   transport failure) — tests inject a fn recording/returning canned data
-  (test/commoncrawl/kotobase_test.cljc); the real nbb POST+JSON-parse lives
+  (test/commoncrawl/kotobase_test.cljk); the real nbb POST+JSON-parse lives
   in `commoncrawl.live-http`.")
 
 (def base-url "https://kotobase.net")

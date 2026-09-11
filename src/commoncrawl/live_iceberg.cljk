@@ -13,7 +13,7 @@
   moved to on 2026-08-28 — that move fixed a real problem (a blocking
   Iceberg commit inside `Promise.all` starves EVERY sibling feed's
   deadline), but this actor has no sibling fetch running concurrently: one
-  `bin/tick.cljs` invocation is a single sequential pass over at most
+  `bin/tick.cljk` invocation is a single sequential pass over at most
   `budget-cap` (default 3) seeds, called once, then the process exits.
   There is nothing here for a blocking call to starve.
 
