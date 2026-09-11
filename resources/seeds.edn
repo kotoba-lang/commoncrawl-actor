@@ -9,7 +9,7 @@
 ;; Each entry: {:domain "<host, exact match>" :url "<canonical https:// URL
 ;; the CDX index is queried for>" :label "<why this domain is seeded>"}.
 ;;
-;; Starting set mirrors src/commoncrawl/seeds.cljc's `embedded-seeds`:
+;; Starting set mirrors src/commoncrawl/seeds.cljk's `embedded-seeds`:
 ;; cloud-itonami's own company/entity-registry sources (dossier.gleif /
 ;; dossier.houjin-bangou / dossier.sec-edgar / dossier.companies-house) plus
 ;; one real, already live-verified company domain (wabteccorp.com, from

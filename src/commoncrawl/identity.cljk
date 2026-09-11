@@ -8,7 +8,7 @@
   Built on `cacao.core` (kotoba-lang/org-chainagnostic-cacao, mint/verify)
   + `ed25519.core` (kotoba-lang/org-ietf-ed25519, did:key derivation) —
   BOTH already `.cljc` with a live-verified nbb (:cljs) branch (see this
-  repo's own README: `nbb --classpath ... test/nbb_smoke.cljs` exercises
+  repo's own README: `nbb --classpath ... test/nbb_smoke.cljk` exercises
   mint/verify/verify-chain on the Node runtime and is proven working here),
   so this ns is portable per repo-wide runtime priority (nbb primary).
 

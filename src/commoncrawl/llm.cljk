@@ -20,7 +20,7 @@
   `complete-fn` is the ONLY capability this ns takes: `(fn [prompt] ->
   completion-string)`, exactly `gftd.cli`'s `llm-complete-fn` return shape —
   tests inject a fn returning a canned EDN string (see
-  test/commoncrawl/llm_test.cljc); the real nbb implementation
+  test/commoncrawl/llm_test.cljk); the real nbb implementation
   (`commoncrawl.live-http/llm-complete-fn`) shells out to `curl` against
   `api.murakumo.cloud/v1/messages`, same idiom as `gftd.cli`'s own :cljs
   branch."

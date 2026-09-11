@@ -2,7 +2,7 @@
 
 ## Running a real tick
 
-`bin/tick.cljs` is the live entry point — it mints/reuses this actor's own
+`bin/tick.cljk` is the live entry point — it mints/reuses this actor's own
 CACAO identity, fetches from Common Crawl, calls murakumo for extraction +
 embeddings, and ingests into **production** `kotobase.net`. Run it from a
 workspace where the sibling `.cljc` deps are checked out next to this repo
@@ -18,7 +18,7 @@ stayed under `kotoba-lang` (see `deps.edn`'s `:dev` alias comment).
 COMMONCRAWL_MURAKUMO_TOKEN=<murakumo /v1/messages+/v1/embeddings bearer token> \
 CF_CATALOG_TOKEN=<Cloudflare R2 Data Catalog token, see below> \
   nbb --classpath "src:../../kotoba-lang/langgraph/src:../../kotoba-lang/langchain/src:../../kotoba-lang/langchain-store/src:../../kotoba-lang/org-chainagnostic-cacao/src:../../kotoba-lang/org-ietf-ed25519/src:../../kotoba-lang/org-ietf-cbor/src:../../kotoba-lang/authority/src" \
-  bin/tick.cljs --budget 1
+  bin/tick.cljk --budget 1
 ```
 
 Flags:
@@ -98,17 +98,17 @@ What was actually proven against PRODUCTION services in this session
   `extracted_summary`/`extracted_entities`/`embedding` fields (all
   optional/additive per the lexicon, so the ingest itself still succeeded
   honestly, just without that enrichment). Both legs ARE covered by the
-  offline test suite (`test/commoncrawl/llm_test.cljc`,
-  `test/commoncrawl/embeddings_test.cljc`) and the nbb smoke test
-  (`test/nbb_smoke.cljs`) against mocked responses — re-run
-  `bin/tick.cljs` with a working token to complete this leg's live
+  offline test suite (`test/commoncrawl/llm_test.cljk`,
+  `test/commoncrawl/embeddings_test.cljk`) and the nbb smoke test
+  (`test/nbb_smoke.cljk`) against mocked responses — re-run
+  `bin/tick.cljk` with a working token to complete this leg's live
   verification.
 
 ## Current status (2026-08-28) — read this before assuming anything above is stale
 
 Two things landed since 2026-07-19: the Iceberg sync (`commoncrawl.iceberg` /
 `commoncrawl.live-iceberg`, see "Iceberg sync" above and `docs/DESIGN.md`)
-and real scheduling (`bin/scheduled.cljs` + the LaunchAgent, see
+and real scheduling (`bin/scheduled.cljk` + the LaunchAgent, see
 "Scheduling" below). Both are now live-verified for their own mechanics,
 but **no page has ever actually reached `:commit` since this actor was
 built**, so the full chain (fetch real content → advise with a real LLM →
@@ -130,7 +130,7 @@ not a code gap — it is one external outage:
   and `~/.gftd/commoncrawl-actor-murakumo-token` supplies it to every
   scheduled tick automatically), but because no page has ever reached that
   step with real content.
-- **What IS proven live on 2026-08-28**: `bin/scheduled.cljs`, run for
+- **What IS proven live on 2026-08-28**: `bin/scheduled.cljk`, run for
   real by launchd (not by hand), resolved both credentials non-interactively
   and completed a full tick with exit 0 (`launchctl print` showed
   `last exit code = 0`) — the scheduling and credential-resolution
@@ -167,12 +167,12 @@ seed-scope/exclude checks.
 ## Scheduling
 
 This actor is designed to be invoked by a scheduler, not run as an
-always-on process. As of 2026-08-28, `bin/scheduled.cljs` + the LaunchAgent
+always-on process. As of 2026-08-28, `bin/scheduled.cljk` + the LaunchAgent
 `net-kotobase.commoncrawl-actor-tick` (`ops/net-kotobase.commoncrawl-actor-tick.plist`)
 is the live implementation of that design — before this, the actor had only
 ever been run by hand.
 
-`bin/scheduled.cljs` resolves both real credentials the way a LaunchAgent
+`bin/scheduled.cljk` resolves both real credentials the way a LaunchAgent
 actually can (neither `kagi` nor an interactive Keychain prompt is
 available under launchd — see the ns docstring):
 
@@ -194,12 +194,12 @@ launchctl bootout gui/$(id -u)/net-kotobase.commoncrawl-actor-tick   # stop
 ```
 
 Cadence is hourly, `--budget 1` (override with `COMMONCRAWL_TICK_BUDGET`).
-The plist carries no logic — edit `bin/scheduled.cljs` instead, since
+The plist carries no logic — edit `bin/scheduled.cljk` instead, since
 `launchctl` needs a bootout/bootstrap cycle on every plist change.
 
 If you'd rather use a different scheduler (the `schedule` skill's
-cron-based routine, or any external cron), point it at `bin/scheduled.cljs`
-too, not `bin/tick.cljs` directly, unless that scheduler already supplies
+cron-based routine, or any external cron), point it at `bin/scheduled.cljk`
+too, not `bin/tick.cljk` directly, unless that scheduler already supplies
 both env vars itself.
 
 ## Reviewing what happened

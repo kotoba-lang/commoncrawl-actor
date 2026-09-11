@@ -33,7 +33,7 @@ LLM into a single `:advise` node and wraps it with an independent
 | `commoncrawl.live-http` | the ONLY ns doing real network/gzip IO (nbb-only, `.cljs`) |
 | `commoncrawl.iceberg` | row-shaping for the Iceberg projection (pure) |
 | `commoncrawl.live-iceberg` | the Iceberg catalog commit (nbb-only, `.cljs`) |
-| `bin/scheduled.cljs` | the launchd entry point — resolves both live credentials, then runs `bin/tick.cljs` |
+| `bin/scheduled.cljk` | the launchd entry point — resolves both live credentials, then runs `bin/tick.cljk` |
 
 ## The injection boundary
 
@@ -49,7 +49,7 @@ hardcoded call:
 
 This is the same "Store / Advisor / Phase are all swaps" discipline
 `gftd-talent-actor`/`robotaxi-actor` use, extended one step further: real IO
-itself is a swap. `commoncrawl.sim` (offline) and `bin/tick.cljs` (live)
+itself is a swap. `commoncrawl.sim` (offline) and `bin/tick.cljk` (live)
 build the exact same graph from `commoncrawl.operation/build` — they only
 differ in which functions they pass in.
 
@@ -76,7 +76,7 @@ per-tick summary log. Two backends: `MemStore` (in-process, used by tests/
 helpers — no 191st hand-rolled `enc`/`dec*` pair, ADR-2607141600).
 `commoncrawl.store/file-store` adds a third option: a `MemStore` whose atom
 persists to a single EDN file across separate OS process invocations — the
-practical default for `bin/tick.cljs` without standing up a real
+practical default for `bin/tick.cljk` without standing up a real
 kotoba-server pod behind `DatomicStore`.
 
 **Lease caveat, stated plainly**: the lease is a best-effort single-runner
@@ -126,7 +126,7 @@ Shape:
   `:disposition` or the decision ledger: net-kotobase ingestion has
   already happened by the time the sync runs, so a catalog outage degrades
   the tick summary's `:iceberg` field, never a page's commit.
-- `bin/tick.cljs` wires the real `commoncrawl.live-iceberg/sync-fn` and
+- `bin/tick.cljk` wires the real `commoncrawl.live-iceberg/sync-fn` and
   needs `CF_CATALOG_TOKEN` (a Cloudflare API token scoped to `R2 Data
   Catalog: Edit` + `Workers R2 Storage: Edit`) in its environment — see
   `docs/operator-guide.md`.

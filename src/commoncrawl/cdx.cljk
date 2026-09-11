@@ -53,7 +53,7 @@
   `captures-of` after parsing the real newline-delimited-JSON (a match) or
   404-JSON (`[{:message \"No Captures found for: ...\"}]`, a no-match) body
   — tests inject a fake returning canned Clojure data directly (see
-  test/commoncrawl/cdx_test.cljc), the real nbb http-fn
+  test/commoncrawl/cdx_test.cljk), the real nbb http-fn
   (`commoncrawl.live-http`) does the actual HTTP GET + JSON parse.
 
   Returns:

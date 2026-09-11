@@ -74,7 +74,7 @@ Every network/gzip capability (`http-fn`/`warc-fetch-fn`/`complete-fn`/
 `embed-fn`) is injected — the entire core above is offline-testable against
 canned fixtures. Real IO lives in exactly two nbb-only `.cljs` namespaces:
 `commoncrawl.live-http` (network/gzip) and `commoncrawl.live-iceberg` (the
-Iceberg catalog commit), both used by the live entry point `bin/tick.cljs`.
+Iceberg catalog commit), both used by the live entry point `bin/tick.cljk`.
 
 ## Iceberg projection: net-kotobase stays the premise
 
@@ -112,7 +112,7 @@ clojure -M:lint
 # while its siblings stayed under kotoba-lang (see deps.edn's :dev alias).
 COMMONCRAWL_MURAKUMO_TOKEN=<token> CF_CATALOG_TOKEN=<token> \
   nbb --classpath "src:../../kotoba-lang/langgraph/src:../../kotoba-lang/langchain/src:../../kotoba-lang/langchain-store/src:../../kotoba-lang/org-chainagnostic-cacao/src:../../kotoba-lang/org-ietf-ed25519/src:../../kotoba-lang/org-ietf-cbor/src:../../kotoba-lang/authority/src" \
-  bin/tick.cljs --budget 1
+  bin/tick.cljk --budget 1
 ```
 
 See [`docs/DESIGN.md`](docs/DESIGN.md) for the full architecture,
