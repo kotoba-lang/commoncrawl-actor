@@ -78,6 +78,7 @@
   be on this list, or it loads fine by hand and fails only under launchd,
   in a log nobody reads."
   (str "src:"
+       (path/join ".." ".." "kotoba-lang" "text" "src") ":"
        (path/join ".." ".." "kotoba-lang" "langgraph" "src") ":"
        (path/join ".." ".." "kotoba-lang" "langchain" "src") ":"
        (path/join ".." ".." "kotoba-lang" "langchain-store" "src") ":"
@@ -104,8 +105,8 @@
       (log "WARN: no" (murakumo-token-file) "-- every page this tick advises"
            "gets a zero-confidence proposal and HOLDs (commoncrawl.policy's"
            "existing confidence floor), not a new failure mode"))
-    (let [r (cp/spawnSync "nbb"
-                          #js ["--classpath" classpath (path/join "bin" "tick.cljs")
+    (let [r (cp/spawnSync "kbb"
+                          #js ["--backend" "sci" "--classpath" classpath (path/join "bin" "tick.cljk")
                                "--budget" (budget)]
                           #js {:encoding "utf8" :stdio "inherit" :env env})]
       (log "tick exit" (.-status r))
