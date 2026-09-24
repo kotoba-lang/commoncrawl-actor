@@ -22,7 +22,7 @@
   when the file is missing/unreadable (never throws: an unreadable optional
   config file must degrade to the safe, small, known-good default, not
   crash the actor)."
-  (:require #?(:clj  [clojure.edn :as edn]
+  (:require #?(:clj  [kotoba.lang.edn :as edn]
                :cljs [cljs.reader :as edn])
             [kotoba.lang.text :as str]))
 
