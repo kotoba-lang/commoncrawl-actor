@@ -3,7 +3,7 @@
   — same discipline as dossier.commoncrawl-test, including the real
   404-with-JSON-body no-match quirk this ADR explicitly asks not to
   regress on."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [commoncrawl.cdx :as cdx]))
 
 (defn- fake-fetch [routes]

@@ -2,7 +2,7 @@
   "The full StateGraph contract as executable tests — the single invariant:
   the LLM's proposal never reaches net-kotobase unless commoncrawl.policy
   says :ok?, and every run leaves exactly one ledger fact."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [commoncrawl.operation :as op]
             [commoncrawl.store :as store]))
 
