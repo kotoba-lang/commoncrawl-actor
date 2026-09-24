@@ -1,5 +1,5 @@
 (ns commoncrawl.extract-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [commoncrawl.extract :as extract]))
 
 (deftest title-of-extracts-and-decodes

@@ -3,7 +3,7 @@
   minted session's shape/resources — the exact scope
   cloud_itonami.identity_core/kotobase-resources documents as closing two
   real live 401s (kotobase:pin specifically)."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [kotoba.lang.text :as str]
             [commoncrawl.identity :as identity]
             [cacao.core :as cacao]))

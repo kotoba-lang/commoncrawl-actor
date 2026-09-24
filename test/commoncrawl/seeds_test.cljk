@@ -1,5 +1,5 @@
 (ns commoncrawl.seeds-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [commoncrawl.seeds :as seeds]))
 
 (deftest embedded-seeds-are-all-valid

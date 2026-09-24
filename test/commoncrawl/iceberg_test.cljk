@@ -2,7 +2,7 @@
   "Pure row-shaping — no IO, no python, no child_process. The real writer
   (`commoncrawl.live-iceberg`) is nbb-only and untested here on purpose,
   same posture this repo already takes toward `commoncrawl.live-http`."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [commoncrawl.iceberg :as iceberg]))
 
 (def committed-result

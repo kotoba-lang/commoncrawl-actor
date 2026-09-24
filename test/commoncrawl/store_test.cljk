@@ -3,7 +3,7 @@
   langchain-store-backed DatomicStore satisfy the same contract, same
   'swap the SSoT, not a rewrite' discipline talent.store-contract-test
   proves for that actor."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [commoncrawl.store :as store]))
 
 (defn- backends []

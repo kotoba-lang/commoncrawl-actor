@@ -3,7 +3,7 @@
   a real LLM proposal is parsed correctly, and an unparseable/garbage
   response can never fabricate a confident proposal (mirrors
   talent.llm-advisor-test's unparseable-output discipline)."
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [commoncrawl.llm :as llm]))
 
 (def page {:url "https://www.gleif.org/" :title "GLEIF" :text "The Global LEI Foundation registry."})

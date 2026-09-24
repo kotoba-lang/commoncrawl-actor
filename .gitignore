@@ -5,3 +5,4 @@
 # CACAO self-mint identity — a raw Ed25519 seed. NEVER commit this.
 /.commoncrawl/
 /.commoncrawl-test-actor/
+.nbb/

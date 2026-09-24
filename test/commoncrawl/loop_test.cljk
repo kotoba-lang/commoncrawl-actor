@@ -2,7 +2,7 @@
   "The durable outer loop — budget capping, cursor round-robin across
   ticks, and the lease's crash-recovery property (a stale lease can be
   re-acquired after its TTL elapses)."
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [commoncrawl.loop :as loop]
             [commoncrawl.operation :as op]
             [commoncrawl.store :as store]))

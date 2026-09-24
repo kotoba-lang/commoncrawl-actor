@@ -3,7 +3,7 @@
   against an injected fake http-fn that RECORDS the request it received —
   proves the exact URL/headers/body shape this actor sends, without any
   real network call."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [commoncrawl.kotobase :as kb]))
 
 (def session {:cacao-b64 "cacao123" :did "did:key:z6MkTestDid"})

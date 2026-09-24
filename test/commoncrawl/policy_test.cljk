@@ -4,7 +4,7 @@
   tick budget ALWAYS holds, no override; a low-confidence extraction also
   holds (tagged :soft?, not :hard?); a clean, in-scope, confident
   extraction is the only thing that clears :ok?."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [commoncrawl.policy :as policy]))
 
 (def demo-seeds
