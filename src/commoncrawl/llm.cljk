@@ -24,7 +24,7 @@
   (`commoncrawl.live-http/llm-complete-fn`) shells out to `curl` against
   `api.murakumo.cloud/v1/messages`, same idiom as `gftd.cli`'s own :cljs
   branch."
-  (:require #?(:clj  [clojure.edn :as edn]
+  (:require #?(:clj  [kotoba.lang.edn :as edn]
                :cljs [cljs.reader :as edn])
             [kotoba.lang.text :as str]))
 

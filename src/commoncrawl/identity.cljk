@@ -30,7 +30,7 @@
   repo's `.gitignore`) — never commit it."
   (:require [cacao.core :as cacao]
             [ed25519.core :as ed]
-            #?(:clj  [clojure.edn :as edn]
+            #?(:clj  [kotoba.lang.edn :as edn]
                :cljs [cljs.reader :as edn])))
 
 (def default-actor "commoncrawl")

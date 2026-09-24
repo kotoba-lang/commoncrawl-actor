@@ -36,7 +36,7 @@
   against the SAME store instance."
   (:require [langchain.db :as d]
             [langchain-store.core :as ls]
-            #?(:clj  [clojure.edn :as edn]
+            #?(:clj  [kotoba.lang.edn :as edn]
                :cljs [cljs.reader :as edn])))
 
 (defprotocol Store
