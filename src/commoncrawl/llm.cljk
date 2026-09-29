@@ -1,7 +1,7 @@
 (ns commoncrawl.llm
   "The `:advise` node's contained intelligence — an LLM extraction call
   following the `70-tools/bmc/src/gftd/cli.cljc` `llm-complete-fn`
-  convention: `murakumo-main` alias resolution (CLAUDE.md's repo-wide
+  convention: `murakumo-main` alias resolution (AGENTS.md's repo-wide
   mandatory LLM model-selection rule, ADR-2607173100 — never hardcode a
   concrete model id), a single `(fn [prompt] -> completion-string)`
   capability, dual OpenAI/Anthropic response-shape tolerance. This is
